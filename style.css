@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: #94a3b8;
+    font-size: 1.25rem;
+}
+
+.game-card {
+    background: #1e293b;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.game-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.difficulty-badge {
+    display: inline-block;
+    background: #10b981;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.score-display {
+    text-align: right;
+}
+
+.score-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #10b981;
+}
+
+.score-label {
+    font-size: 0.875rem;
+    color: #94a3b8;
+}
+
+.floor-plan-container {
+    background: #334155;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    min-height: 500px;
+}
+
+#floor-plan {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #475569;
+    border-radius: 0.5rem;
+}
+
+.room {
+    transition: fill 0.2s;
+    cursor: pointer;
+}
+
+.room:not(.checked):hover {
+    fill: #94a3b8 !important;
+}
+
+.room.correct {
+    fill: #10b981 !important;
+}
+
+.room.incorrect {
+    fill: #ef4444 !important;
+}
+
+.room-text {
+    pointer-events: none;
+    font-weight: bold;
+}
+
+.room-label {
+    pointer-events: none;
+    font-size: 0.7rem;
+}
+
+.room-answer {
+    pointer-events: none;
+    font-size: 0.5rem;
+    fill: #fbbf24;
+    font-weight: bold;
+}
+
+.room-list-section h3 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+}
+
+.room-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.room-item {
+    background: #475569;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.button-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-check {
+    background: #10b981;
+    color: white;
+}
+
+.btn-check:hover:not(:disabled) {
+    background: #059669;
+}
+
+.btn-check:disabled {
+    background: #475569;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.btn-reset {
+    background: #3b82f6;
+    color: white;
+}
+
+.btn-reset:hover {
+    background: #2563eb;
+}
+
+.instructions-card {
+    background: #1e293b;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.instructions-card h3 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.instructions-card ol {
+    padding-left: 1.5rem;
+    color: #cbd5e1;
+}
+
+.instructions-card li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .game-card {
+        padding: 1rem;
+    }
+    
+    .floor-plan-container {
+        padding: 1rem;
+        min-height: 400px;
+    }
+}
