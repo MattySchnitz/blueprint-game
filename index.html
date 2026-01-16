@@ -4,15 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blueprint - Daily Floor Plan Game</title>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="root"></div>
-    <script type="text/babel">
-        // PASTE THE GAME CODE HERE (from the artifact above, but convert it to work standalone)
-    </script>
+    <div id="app">
+        <div class="container">
+            <div class="header">
+                <h1>Blueprint</h1>
+                <p class="subtitle">Daily Floor Plan Challenge</p>
+            </div>
+
+            <div class="game-card">
+                <div class="game-header">
+                    <div>
+                        <h2 id="floor-plan-name">The Simpsons House</h2>
+                        <span class="difficulty-badge">Easy</span>
+                    </div>
+                    <div id="score-display" class="score-display" style="display: none;">
+                        <div class="score-number">0/7</div>
+                        <div class="score-label">Correct</div>
+                    </div>
+                </div>
+
+                <div class="floor-plan-container">
+                    <svg id="floor-plan" viewBox="0 0 100 100"></svg>
+                </div>
+
+                <div class="room-list-section">
+                    <h3>Available Rooms:</h3>
+                    <div id="room-list" class="room-list"></div>
+                </div>
+
+                <div class="button-container">
+                    <button id="check-btn" class="btn btn-check">
+                        Check Answers (<span id="answer-count">0/7</span>)
+                    </button>
+                    <button id="reset-btn" class="btn btn-reset" style="display: none;">
+                        Play Again
+                    </button>
+                </div>
+            </div>
+
+            <div class="instructions-card">
+                <h3>How to Play:</h3>
+                <ol>
+                    <li>Click on each numbered room in the floor plan</li>
+                    <li>Select the correct room name from the popup</li>
+                    <li>Once all rooms are labeled, click "Check Answers"</li>
+                    <li>Green rooms are correct, red rooms are incorrect</li>
+                    <li>Share your score and come back tomorrow for a new floor plan!</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
 </body>
 </html>
