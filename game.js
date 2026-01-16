@@ -1,15 +1,16 @@
-// Floor plan data
+// Floor plan data - Ted & Marshall's iconic NYC apartment
 const FLOOR_PLAN = {
-    name: "The Simpsons House",
-    difficulty: "Easy",
+    name: "Ted & Marshall's Apartment",
+    difficulty: "Medium",
     rooms: [
-        { id: 1, name: "Living Room", x: 20, y: 30, width: 35, height: 30 },
-        { id: 2, name: "Kitchen", x: 55, y: 30, width: 25, height: 30 },
-        { id: 3, name: "Garage", x: 20, y: 60, width: 25, height: 25 },
-        { id: 4, name: "Dining Room", x: 55, y: 60, width: 25, height: 25 },
-        { id: 5, name: "Bart's Room", x: 20, y: 10, width: 20, height: 20 },
-        { id: 6, name: "Lisa's Room", x: 40, y: 10, width: 20, height: 20 },
-        { id: 7, name: "Master Bedroom", x: 60, y: 10, width: 20, height: 20 }
+        { id: 1, name: "Living Room", x: 25, y: 35, width: 35, height: 30 },
+        { id: 2, name: "Kitchen", x: 60, y: 35, width: 20, height: 25 },
+        { id: 3, name: "Ted's Bedroom", x: 15, y: 10, width: 20, height: 25 },
+        { id: 4, name: "Marshall's Bedroom", x: 35, y: 10, width: 20, height: 25 },
+        { id: 5, name: "Bathroom", x: 55, y: 10, width: 15, height: 15 },
+        { id: 6, name: "Entry/Hallway", x: 15, y: 65, width: 20, height: 15 },
+        { id: 7, name: "Balcony", x: 60, y: 60, width: 20, height: 20 },
+        { id: 8, name: "The Red Door", x: 15, y: 80, width: 10, height: 8 }
     ]
 };
 
@@ -106,7 +107,7 @@ function renderRoomList() {
 function handleRoomClick(roomId) {
     if (showResults) return;
     
-    let message = 'Select room name:\n\n';
+    let message = '🎺 HIMYM Apartment - Select room name:\n\n';
     roomNames.forEach((name, i) => {
         message += `${i + 1}. ${name}\n`;
     });
@@ -144,6 +145,15 @@ function checkAnswers() {
     
     document.getElementById('score-display').style.display = 'block';
     document.querySelector('.score-number').textContent = `${correct}/${FLOOR_PLAN.rooms.length}`;
+    
+    // Fun HIMYM-themed results messages
+    if (correct === FLOOR_PLAN.rooms.length) {
+        setTimeout(() => alert('🎺 Legendary! You know this apartment better than the Mosby Boys!'), 100);
+    } else if (correct >= FLOOR_PLAN.rooms.length - 2) {
+        setTimeout(() => alert('👔 Suit up! You almost nailed it!'), 100);
+    } else {
+        setTimeout(() => alert('🍺 Time to rewatch the series at MacLaren\'s!'), 100);
+    }
     
     updateUI();
 }
